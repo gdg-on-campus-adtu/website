@@ -1,0 +1,13 @@
+# WARNING: USE THIS ONLY FOR DEVELOPMENT!
+services:
+  db:
+    image: docker.io/library/postgres:18-alpine
+    container_name: gdgocadtu_db
+    ports:
+      - ${POSTGRES_PORT}:5432
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - ${HOME}/.var/postgresql/gdgocadtu_db/data:/var/lib/postgresql/data
