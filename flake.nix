@@ -18,6 +18,7 @@
             name = "gdgoc-adtu";
             packages = [
               pkgs.deno
+              pkgs.podman-compose
               pkgs.svelte-language-server
               pkgs.typescript-language-server
               pkgs.tailwindcss-language-server
