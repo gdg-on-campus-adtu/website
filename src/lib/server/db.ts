@@ -1,6 +1,6 @@
 import postgres from "postgres";
 import process from "node:process";
-import * as schema from "./schema.ts";
+import * as schema from "./db/schema.ts";
 import { env } from "$env/dynamic/private";
 import { drizzle } from "drizzle-orm/postgres-js";
 

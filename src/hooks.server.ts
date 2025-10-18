@@ -1,6 +1,8 @@
-import * as auth from "$lib/server/auth";
+import { auth } from "$lib/server/auth.ts";
+import { building } from "$app/environment";
 import { sequence } from "@sveltejs/kit/hooks";
 import { text, json, type Handle } from "@sveltejs/kit";
+import { svelteKitHandler } from "better-auth/svelte-kit";
 
 function isFormContentType(request: Request) {
   return ["application/x-www-form-urlencoded", "multipart/form-data", "text/plain"].includes(
@@ -35,28 +37,8 @@ function csrf(allowedPaths: string[] = [], allowedOrigins: string[] = []): Handl
   };
 }
 
-function authentication(): Handle {
-  return async ({ event, resolve }) => {
-    const sessionToken = event.cookies.get(auth.sessionCookieName);
+const betterAuth: Handle = async ({ event, resolve }) => {
+  return svelteKitHandler({ event, resolve, auth, building });
+};
 
-    if (!sessionToken) {
-      event.locals.user = null;
-      event.locals.session = null;
-      return resolve(event);
-    }
-
-    const { session, user } = await auth.validateSessionToken(sessionToken);
-    if (session) {
-      auth.setSessionTokenCookie(event, sessionToken, session.expiresAt);
-    } else {
-      auth.deleteSessionTokenCookie(event);
-    }
-
-    event.locals.user = user;
-    event.locals.session = session;
-
-    return resolve(event);
-  };
-}
-
-export const handle: Handle = sequence(csrf(), authentication());
+export const handle: Handle = sequence(csrf(), betterAuth);
