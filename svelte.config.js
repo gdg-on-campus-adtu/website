@@ -12,7 +12,9 @@ const config = {
   kit: {
     adapter: adapter(),
     csrf: {
-      trustedOrigins: ["https://gdgoc-adtu.deno.dev"],
+      // NOTE: Implement it manually in src/hooks.server.ts
+      // NOTE: Might switch back to this in future
+      trustedOrigins: ["*"],
     },
     experimental: {
       remoteFunctions: true,

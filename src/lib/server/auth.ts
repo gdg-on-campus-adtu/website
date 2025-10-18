@@ -1,9 +1,10 @@
-import type { RequestEvent } from "@sveltejs/kit";
 import { eq } from "drizzle-orm";
-import { sha256 } from "@oslojs/crypto/sha2";
-import { encodeBase64url, encodeHexLowerCase } from "@oslojs/encoding";
 import { db } from "$lib/server/db";
+import { env } from "$env/dynamic/private";
+import { sha256 } from "@oslojs/crypto/sha2";
 import * as table from "$lib/server/db/schema";
+import type { RequestEvent } from "@sveltejs/kit";
+import { encodeBase64url, encodeHexLowerCase } from "@oslojs/encoding";
 
 const DAY_IN_MS = 1000 * 60 * 60 * 24;
 
@@ -69,13 +70,19 @@ export async function invalidateSession(sessionId: string) {
 
 export function setSessionTokenCookie(event: RequestEvent, token: string, expiresAt: Date) {
   event.cookies.set(sessionCookieName, token, {
-    expires: expiresAt,
     path: "/",
+    httpOnly: true,
+    sameSite: "strict",
+    secure: env.ENV == "prod" || env.ENV == "production",
+    expires: expiresAt,
   });
 }
 
 export function deleteSessionTokenCookie(event: RequestEvent) {
   event.cookies.delete(sessionCookieName, {
     path: "/",
+    httpOnly: true,
+    sameSite: "strict",
+    secure: env.ENV == "prod" || env.ENV == "production",
   });
 }
