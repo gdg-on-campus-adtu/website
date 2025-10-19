@@ -4,6 +4,9 @@
     "npm:@deno/svelte-adapter@0.1": "0.1.0_@sveltejs+kit@2.47.1__@sveltejs+vite-plugin-svelte@6.2.1___svelte@5.41.0____acorn@8.15.0___vite@7.1.10____picomatch@4.0.3__svelte@5.41.0___acorn@8.15.0__vite@7.1.10___picomatch@4.0.3__acorn@8.15.0_@sveltejs+vite-plugin-svelte@6.2.1__svelte@5.41.0___acorn@8.15.0__vite@7.1.10___picomatch@4.0.3_svelte@5.41.0__acorn@8.15.0_vite@7.1.10__picomatch@4.0.3",
     "npm:@eslint/compat@^1.4.0": "1.4.0_eslint@9.38.0",
     "npm:@eslint/js@^9.38.0": "9.38.0",
+    "npm:@fontsource/alice@^5.2.8": "5.2.8",
+    "npm:@fontsource/maple-mono@^5.2.6": "5.2.6",
+    "npm:@fontsource/poppins@^5.2.7": "5.2.7",
     "npm:@internationalized/date@^3.10.0": "3.10.0",
     "npm:@lucide/svelte@0.546": "0.546.0_svelte@5.41.0__acorn@8.15.0",
     "npm:@sveltejs/kit@2.47.1": "2.47.1_@sveltejs+vite-plugin-svelte@6.2.1__svelte@5.41.0___acorn@8.15.0__vite@7.1.10___picomatch@4.0.3_svelte@5.41.0__acorn@8.15.0_vite@7.1.10__picomatch@4.0.3_acorn@8.15.0",
@@ -25,6 +28,7 @@
     "npm:postgres@^3.4.7": "3.4.7",
     "npm:prettier-plugin-svelte@^3.4.0": "3.4.0_prettier@3.6.2_svelte@5.41.0__acorn@8.15.0",
     "npm:prettier-plugin-tailwindcss@~0.6.14": "0.6.14_prettier@3.6.2_prettier-plugin-svelte@3.4.0__prettier@3.6.2__svelte@5.41.0___acorn@8.15.0_svelte@5.41.0__acorn@8.15.0",
+    "npm:prettier@*": "3.6.2",
     "npm:prettier@3.6.2": "3.6.2",
     "npm:prettier@^3.6.2": "3.6.2",
     "npm:svelte-check@4.3.3": "4.3.3_svelte@5.41.0__acorn@8.15.0_typescript@5.9.3",
@@ -421,6 +425,15 @@
     },
     "@floating-ui/utils@0.2.10": {
       "integrity": "sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ=="
+    },
+    "@fontsource/alice@5.2.8": {
+      "integrity": "sha512-EDpK9aFXsaRKdyZpgFu8d5+zmE07yIaFxqVeKrYQJjdQpEhWDZA+naLflHwQQmMbLMJK3a4X/RAm5MCScT93NA=="
+    },
+    "@fontsource/maple-mono@5.2.6": {
+      "integrity": "sha512-+VAD7z8nyTkaiz2/Ww639Z5Kp/YJIL4dNMQxydqSMafNb5nKxFeoRq6W3g9WJ04IcBjdBmn0dKFNk90lyz7K+w=="
+    },
+    "@fontsource/poppins@5.2.7": {
+      "integrity": "sha512-6uQyPmseo4FgI97WIhA4yWRlNaoLk4vSDK/PyRwdqqZb5zAEuc+Kunt8JTMcsHYUEGYBtN15SNkMajMdqUSUmg=="
     },
     "@hexagon/base64@1.1.28": {
       "integrity": "sha512-lhqDEAvWixy3bZ+UOYbPwUbBkwBq5C1LAJ/xPC8Oi+lL54oyakv/npbA0aU2hgCsx/1NUd4IBvV03+aUBWxerw=="
@@ -2447,6 +2460,9 @@
         "npm:@deno/svelte-adapter@0.1",
         "npm:@eslint/compat@^1.4.0",
         "npm:@eslint/js@^9.38.0",
+        "npm:@fontsource/alice@^5.2.8",
+        "npm:@fontsource/maple-mono@^5.2.6",
+        "npm:@fontsource/poppins@^5.2.7",
         "npm:@internationalized/date@^3.10.0",
         "npm:@lucide/svelte@0.546",
         "npm:@sveltejs/kit@^2.47.1",
