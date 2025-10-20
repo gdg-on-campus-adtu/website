@@ -17,7 +17,8 @@
           devShells.default = pkgs.mkShellNoCC {
             name = "gdgoc-adtu";
             packages = [
-              pkgs.deno
+              pkgs.nodejs-slim_24
+              pkgs.pnpm
               pkgs.podman-compose
               pkgs.svelte-language-server
               pkgs.typescript-language-server
