@@ -1,0 +1,29 @@
+[language-server.css]
+command = "vscode-css-languageserver"
+args = ["--stdio"]
+
+[language-server.tailwindcss]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "svelte"
+formatter = { command = "pnpm", args = ["prettier", "--parser", "svelte"] }
+auto-format = true
+language-servers = ["svelteserver", "tailwindcss"]
+
+[[language]]
+name = "css"
+formatter = { command = "pnpm", args = ["prettier", "--parser", "css"] }
+auto-format = true
+language-servers = ["css", "tailwindcss"]
+
+[[language]]
+name = "javascript"
+formatter = { command = "pnpm", args = ["prettier", "--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+formatter = { command = "pnpm", args = ["prettier", "--parser", "typescript"] }
+auto-format = true
