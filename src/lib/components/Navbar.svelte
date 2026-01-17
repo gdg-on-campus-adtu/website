@@ -43,5 +43,7 @@
     <li class="cursor-pointer hover:text-gray-700">Gallery</li>
   </ul>
 
-  <Button.Root variant="blue" class="font-archivo">Join the Community</Button.Root>
+  <a href="https://gdg.community.dev/gdg-on-campus-assam-down-town-university-guwahati-india/">
+    <Button.Root variant="blue" class="font-archivo">Join the Community</Button.Root>
+  </a>
 </nav>

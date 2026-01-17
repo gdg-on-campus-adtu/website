@@ -3,12 +3,14 @@
 </script>
 
 <footer class="flex min-h-screen w-full flex-col bg-white pt-60">
-  <div class="mx-auto h-[30vh] w-[90%] max-w-7xl bg-[#D9D9D9] md:h-[35vh]"></div>
+  <div
+    class="mx-auto h-[30vh] w-[90%] max-w-7xl border-2 border-black bg-[#D9D9D9] md:h-[35vh]"
+  ></div>
 
   <div class="mx-auto w-full max-w-7xl flex-1 px-6 py-12 md:px-5 md:py-16">
     <div class="flex flex-col justify-between gap-12 md:flex-row">
       <div class="flex w-full flex-col md:w-1/2">
-        <h3 class="mb-2 text-sm font-medium">Contact</h3>
+        <h3 class="mb-2 text-md font-medium">Contact</h3>
         <div
           class="mb-6 h-0.5 w-full max-w-lg"
           style="background: linear-gradient(to right, #4285F4 25%, #EA4335 25%, #EA4335 50%, #FBBC04 50%, #FBBC04 75%, #34A853 75%);"
@@ -24,7 +26,7 @@
 
       <div class="flex w-full gap-16 md:w-auto md:gap-32">
         <div class="flex flex-col">
-          <h3 class="mb-2 text-sm font-medium">Nav</h3>
+          <h3 class="mb-2 text-md font-medium">Nav</h3>
           <div class="mb-6 h-px w-full bg-gray-500"></div>
 
           <ul class="font-space flex flex-col gap-2">
@@ -37,18 +39,21 @@
         </div>
 
         <div class="flex flex-col">
-          <h3 class="mb-2 text-sm font-medium">Socials</h3>
+          <h3 class="mb-2 text-md font-medium">Socials</h3>
           <div class="mb-6 h-px w-full bg-gray-500"></div>
 
           <ul class="font-space flex flex-col gap-2">
             <li>
-              <a href="https://linkedin.com" target="_blank" class="hover:text-gray-600">LinkedIn</a>
+              <a href="https://linkedin.com" target="_blank" class="hover:text-gray-600">LinkedIn</a
+              >
             </li>
             <li>
               <a href="https://twitter.com" target="_blank" class="hover:text-gray-600">Twitter</a>
             </li>
             <li>
-              <a href="https://instagram.com" target="_blank" class="hover:text-gray-600">Instagram</a>
+              <a href="https://instagram.com" target="_blank" class="hover:text-gray-600"
+                >Instagram</a
+              >
             </li>
             <li>
               <a href="https://github.com" target="_blank" class="hover:text-gray-600">GitHub</a>
