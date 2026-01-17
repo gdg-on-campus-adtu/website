@@ -1,23 +1,39 @@
 <script lang="ts">
-  import type { HTMLAttributes } from "svelte/elements";
-  import { cn, type WithElementRef } from "$lib/utils.js";
+  import type { Snippet } from "svelte";
 
-  let {
-    ref = $bindable(null),
-    class: className,
-    children,
-    ...restProps
-  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
+  interface Props {
+    color?: string;
+    image?: string;
+    title: string;
+    description?: string;
+    children?: Snippet;
+  }
+
+  let { color = "bg-white", image, title, description, children }: Props = $props();
 </script>
 
 <div
-  bind:this={ref}
-  data-slot="card"
-  class={cn(
-    "flex flex-col gap-6 rounded-xl border bg-card py-6 text-card-foreground shadow-sm",
-    className,
-  )}
-  {...restProps}
+  class="relative flex h-full flex-col gap-4 border-[3px] border-black p-6 shadow-[10px_10px_0px_0px_#000] transition-all hover:-translate-y-1 hover:shadow-[14px_14px_0px_0px_#000] {color}"
 >
-  {@render children?.()}
+  <div class="aspect-square w-full shrink-0 overflow-hidden border-[3px] border-black bg-[#D9D9D9]">
+    {#if image}
+      <img src={image} alt={title} class="h-full w-full object-cover" />
+    {/if}
+  </div>
+
+  <div class="flex grow flex-col gap-3">
+    <h3 class="font-monocraft text-2xl leading-tight">{title}</h3>
+
+    {#if description}
+      <p class="font-space line-clamp-3 text-sm leading-snug font-medium text-black/80">
+        {description}
+      </p>
+    {/if}
+
+    {#if children}
+      <div class="mt-auto pt-2">
+        {@render children()}
+      </div>
+    {/if}
+  </div>
 </div>
