@@ -36,11 +36,11 @@
   <img src={gdgLogo} alt="GDG Logo" class="-ml-17 h-25 w-auto" />
 
   <ul class="text-md font-space -ml-8 hidden gap-8 text-black md:flex">
-    <li class="cursor-pointer hover:text-gray-700">Home</li>
-    <li class="cursor-pointer hover:text-gray-700">Events</li>
-    <li class="cursor-pointer hover:text-gray-700">Projects</li>
-    <li class="cursor-pointer hover:text-gray-700">Team</li>
-    <li class="cursor-pointer hover:text-gray-700">Gallery</li>
+    <li><a href="/" class="cursor-pointer hover:text-gray-700">Home</a></li>
+    <li><a href="/events" class="cursor-pointer hover:text-gray-700">Events</a></li>
+    <li><a href="/" class="cursor-pointer hover:text-gray-700">Projects</a></li>
+    <li><a href="/" class="cursor-pointer hover:text-gray-700">Team</a></li>
+    <li><a href="/" class="cursor-pointer hover:text-gray-700">Gallery</a></li>
   </ul>
 
   <a href="https://gdg.community.dev/gdg-on-campus-assam-down-town-university-guwahati-india/">
