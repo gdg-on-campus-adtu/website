@@ -2,7 +2,7 @@
   // Future links
 </script>
 
-<footer class="flex min-h-screen w-full flex-col bg-white pt-60">
+<footer class="bg-dots flex min-h-screen w-full flex-col bg-white pt-60">
   <div
     class="mx-auto h-[30vh] w-[90%] max-w-7xl border-2 border-black bg-[#D9D9D9] md:h-[35vh]"
   ></div>
