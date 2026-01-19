@@ -44,19 +44,19 @@
 
           <ul class="font-space flex flex-col gap-2">
             <li>
-              <a href="https://linkedin.com" target="_blank" class="hover:text-gray-600">LinkedIn</a
+              <a href="https://www.linkedin.com/company/gdg-on-campus-adtu/" target="_blank" class="hover:text-gray-600">LinkedIn</a
               >
             </li>
             <li>
-              <a href="https://twitter.com" target="_blank" class="hover:text-gray-600">Twitter</a>
+              <a href="https://x.com/gdsc_adtu" target="_blank" class="hover:text-gray-600">Twitter</a>
             </li>
             <li>
-              <a href="https://instagram.com" target="_blank" class="hover:text-gray-600"
+              <a href="https://www.instagram.com/gdg.adtu/" target="_blank" class="hover:text-gray-600"
                 >Instagram</a
               >
             </li>
             <li>
-              <a href="https://github.com" target="_blank" class="hover:text-gray-600">GitHub</a>
+              <a href="https://github.com/gdg-on-campus-adtu" target="_blank" class="hover:text-gray-600">GitHub</a>
             </li>
           </ul>
         </div>

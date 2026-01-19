@@ -106,8 +106,8 @@
     </div>
 
     <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
-      {#each pastEvents.slice(0, visibleCount) as evt (evt.title + evt.date)}
-        <div in:fly={{ y: -50, duration: 500 }} out:fly={{ y: 20, duration: 300 }} class="h-full">
+      {#each pastEvents.slice(0, visibleCount) as evt, i (evt.title + evt.date)}
+        <div in:fly={{ y: 50, duration: 500, delay: i * 40 }} class="h-full">
           <Card color={evt.color} title={evt.title} description={evt.description} image={evt.image}>
             <div class="font-space flex w-full items-center justify-between">
               <div class="flex flex-col">

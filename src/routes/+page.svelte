@@ -11,7 +11,7 @@
   }
 
   const headline: HeadlineWord[] = [
-    { text: "code.", color: "text-[#E34735]" },
+    { text: "code.", color: "text-[#FF0028]" },
     { text: "connect.", color: "text-[#5FA953]" },
     { text: "create.", color: "text-[#F4BB19]" },
   ];

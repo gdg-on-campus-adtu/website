@@ -21,7 +21,7 @@ interface EventItem {
 }
 
 const colors = {
-    red: "bg-[#E34735]",
+    red: "bg-[#FF0028]",
     green: "bg-[#5FA953]",
     yellow: "bg-[#F4BB19]",
     blue: "bg-[#4285F4]",
@@ -29,17 +29,17 @@ const colors = {
 };
 
 export const upcomingEvents: EventItem[] = [
-    /*         {
-            color: colors.gray,
-            image: aimlImg,
-            title: "Introduction to AI & Machine Learning",
-            date: "Jan 18, 2026",
-            type: "Online Meet",
-            linkText: "RSVP Now",
-            link: "https://gdg.community.dev/events/details/google-gdg-on-campus-assam-down-town-university-guwahati-india-presents-introduction-to-ai-amp-ml/",
-            description:
-                "An introductory info session on Artificial Intelligence & Machine Learning, conducted by GDG On Campus | Assam down town University, covering fundamentals, real-world applications, and how beginners can start their AI/ML journey.",
-        }, */
+/*     {
+        color: colors.gray,
+        image: aimlImg,
+        title: "Introduction to AI & Machine Learning",
+        date: "Jan 18, 2026",
+        type: "Online Meet",
+        linkText: "RSVP Now",
+        link: "https://gdg.community.dev/events/details/google-gdg-on-campus-assam-down-town-university-guwahati-india-presents-introduction-to-ai-amp-ml/",
+        description:
+            "An introductory info session on Artificial Intelligence & Machine Learning, conducted by GDG On Campus | Assam down town University, covering fundamentals, real-world applications, and how beginners can start their AI/ML journey.",
+    }, */
 ];
 
 export const pastEvents: EventItem[] = [

@@ -38,7 +38,7 @@
   <ul class="text-md font-space -ml-8 hidden gap-8 text-black md:flex">
     <li><a href="/" class="cursor-pointer hover:text-gray-700">Home</a></li>
     <li><a href="/events" class="cursor-pointer hover:text-gray-700">Events</a></li>
-    <li><a href="/" class="cursor-pointer hover:text-gray-700">Projects</a></li>
+    <li><a href="/projects" class="cursor-pointer hover:text-gray-700">Projects</a></li>
     <li><a href="/" class="cursor-pointer hover:text-gray-700">Team</a></li>
     <li><a href="/" class="cursor-pointer hover:text-gray-700">Gallery</a></li>
   </ul>
