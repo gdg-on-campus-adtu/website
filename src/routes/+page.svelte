@@ -1,14 +1,10 @@
 <script lang="ts">
   import communityImg from "$lib/assets/imgs/gallery/community-img.webp";
-  // import bytehacksImg from "$lib/assets/imgs/gallery/byteHacks/bytesHacks-img-1.webp";
-  // import aiImg from "$lib/assets/imgs/gallery/buildWithAI/buildWithAI-img-1.webp";
-
-  import kickoffImg from "$lib/assets/imgs/evnts/gdg-kickoff-evnt.webp";
-  import iotImg from "$lib/assets/imgs/evnts/iot-evnt.webp";
-  import uiuxImg from "$lib/assets/imgs/evnts/ui-ux-evnt.webp";
-
   import Card from "$lib/components/ui/card/card.svelte";
   import * as Button from "$lib/components/ui/button/index.js";
+  import { pastEvents } from "$lib/data/events";
+
+  import { galleryItems } from "$lib/data/gallery";
 
   interface HeadlineWord {
     text: string;
@@ -16,37 +12,13 @@
   }
 
   const headline: HeadlineWord[] = [
-    { text: "code.", color: "text-[#E34735]" },
+    { text: "code.", color: "text-[#FF0028]" },
     { text: "connect.", color: "text-[#5FA953]" },
     { text: "create.", color: "text-[#F4BB19]" },
   ];
 
-  const evts = [
-    {
-      color: "bg-[#E34735]",
-      image: uiuxImg,
-      title: "Introduction to Design & UI/UX",
-      date: "Nov 28, 2025",
-      description:
-        "Kickstart your design journey! Learn the fundamentals of UI/UX design, including user research, wireframing, and visual design principles. This session is perfect for beginners looking to understand how intuitive and engaging digital experiences are crafted.",
-    },
-    {
-      color: "bg-[#5FA953]",
-      image: iotImg,
-      title: "Introduction to IoT",
-      date: "Nov 22, 2025",
-      description:
-        "Step into the world of smart technology! Get an introduction to the Internet of Things, exploring how devices connect, communicate, and automate the real world. Ideal for beginners curious about sensors, smart systems, and real-world IoT applications.",
-    },
-    {
-      color: "bg-[#F4BB19]",
-      image: kickoffImg,
-      title: "GDG Kickoff & Git Workshop",
-      date: "Nov 06, 2025",
-      description:
-        "A new chapter of innovation! Featuring technical deep dives on Git & Open Source by Advisor Debarchito Nath, and Cyber Security insights by Lead Himan Kalita.",
-    },
-  ];
+  const recentEvents = pastEvents.slice(0, 3);
+  const galleryPreview = [...galleryItems].reverse().slice(0, 7);
 </script>
 
 <section id="home" class="relative flex min-h-screen flex-col justify-center overflow-hidden">
@@ -72,14 +44,9 @@
   <div class="relative z-10 flex justify-center pb-6 select-none">
     <span class="scroll-indicator text-5xl text-[#4285F4]">⌄</span>
   </div>
-
-  <div
-    class="pointer-events-none absolute bottom-0 left-0 z-0 h-70 w-full"
-    style="background: radial-gradient(ellipse 100% 80% at 50% 0%, transparent 40%, rgba(255,255,255,1) 100%);"
-  ></div>
 </section>
 
-<section id="about" class="flex min-h-screen w-full flex-col justify-center bg-white px-6 md:px-16">
+<section id="about" class="flex min-h-screen w-full flex-col justify-center px-6 md:px-16">
   <div class="mx-auto w-full max-w-7xl">
     <h2 class="font-monocraft pixel-text mb-30 text-center text-4xl text-[#4285F4] md:text-6xl">
       What does GDG On Campus-ADTU do?
@@ -90,7 +57,7 @@
       >
         <ul class="list-disc space-y-5 pl-5">
           <li>
-            <span class="text-xl font-bold text-[#4285F4]">Tech Hub & Teams:</span>
+            <span class="font-open text-xl font-semibold text-[#4285F4]">Tech Hub & Teams:</span>
             GDG On Campus-ADTU is your hub for all things tech! We have focused teams in
             <span class="font-bold italic underline underline-offset-2"
               >AI/ML, Android, Web, Cyber Security Game Dev and more</span
@@ -98,13 +65,13 @@
             to help students explore and master the latest technology.
           </li>
           <li>
-            <span class="text-xl font-bold text-[#F4BB19]">Flagship Event:</span>
+            <span class="font-open text-xl font-semibold text-[#F4BB19]">Flagship Event:</span>
             Our main event, the
             <span class="font-bold italic underline underline-offset-2">ByteHacks Hackathon</span>,
             reflects our dedication to innovation, collaboration, and hands-on learning.
           </li>
           <li>
-            <span class="text-xl font-bold text-[#5FA953]">Skill Building:</span>
+            <span class="font-open text-xl font-semibold text-[#5FA953]">Skill Building:</span>
             Through
             <span class="font-bold italic underline underline-offset-2"
               >workshops, tech talks, and interactive sessions</span
@@ -112,7 +79,7 @@
             <span class="font-bold italic underline">practical, real-world skills</span>.
           </li>
           <li>
-            <span class="text-xl font-bold text-[#E34735]">Community:</span>
+            <span class="font-open text-xl font-semibold text-[#FF0028]">Community:</span>
             Join us to become part of a
             <span class="font-bold italic underline underline-offset-2">vibrant tech ecosystem</span
             >, learn from peers and mentors, and bring your ideas to life!
@@ -131,14 +98,19 @@
   </div>
 </section>
 
-<section id="events" class="flex w-full flex-col justify-center bg-white px-6 pt-20 pb-10 md:px-16">
+<section id="events" class="flex w-full flex-col justify-center px-6 pt-20 pb-10 md:px-16">
   <div class="mx-auto w-full max-w-7xl">
-    <h2 class="font-monocraft pixel-text mb-20 text-center text-4xl text-[#4285F4] md:text-6xl">
-      Recent Events
-    </h2>
+    <div class="mb-16 text-center md:mb-24">
+      <h2 class="font-monocraft pixel-text mb-6 text-4xl text-[#4285F4] md:text-6xl">
+        Recent Events
+      </h2>
+      <p class="font-space mx-auto max-w-2xl text-base text-gray-500 md:text-lg">
+        Check out some of our recent events and activities.
+      </p>
+    </div>
 
     <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
-      {#each evts as evt}
+      {#each recentEvents as evt}
         <Card color={evt.color} title={evt.title} description={evt.description} image={evt.image}>
           <div class="font-space flex w-full items-center justify-between">
             <span class="border-b-2 border-black text-sm font-bold">
@@ -146,7 +118,9 @@
             </span>
 
             <a
-              href="/"
+              href={evt.link}
+              target="_blank"
+              rel="noopener noreferrer"
               class="group flex items-center gap-1 text-sm font-bold text-black transition-all hover:opacity-70"
             >
               Read more
@@ -158,7 +132,7 @@
     </div>
 
     <div class="mt-25 flex justify-center">
-      <a href="/">
+      <a href="/events">
         <Button.Root variant="blue" class="font-archivo flex items-center gap-2 px-10 py-6">
           Visit Events Page <span class="text-2xl leading-none">→</span>
         </Button.Root>
@@ -169,13 +143,13 @@
 
 <section
   id="gallery"
-  class="flex min-h-screen w-full flex-col justify-center bg-white px-6 py-20 pt-60 md:px-16"
+  class="flex min-h-screen w-full flex-col justify-center px-6 py-20 pt-60 md:px-16"
 >
   <div class="mx-auto w-full max-w-7xl">
     <div class="mb-16 text-center md:mb-24">
       <h2 class="font-monocraft pixel-text mb-6 text-4xl text-[#4285F4] md:text-6xl">Gallery</h2>
       <p class="font-space mx-auto max-w-2xl text-base text-gray-500 md:text-lg">
-        Take a look at some of our recent events and activities.
+        Visual stories from the GDG ADTU community.
       </p>
     </div>
 
@@ -183,76 +157,90 @@
       <div
         class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-2 md:row-span-2"
       >
-        <!-- <img
-          src=""
-          alt="Gallery 1"
-          class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        /> -->
+        {#if galleryPreview[0]}
+          <img
+            src={galleryPreview[0].src}
+            alt="Gallery 1"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        {/if}
       </div>
 
       <div
         class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-2 md:row-span-1"
       >
-        <!-- <img
-          src=""
-          alt="Gallery 2"
-          class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        /> -->
+        {#if galleryPreview[1]}
+          <img
+            src={galleryPreview[1].src}
+            alt="Gallery 2"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        {/if}
       </div>
 
       <div
         class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-2 md:row-span-1"
       >
-        <!-- <img
-          src=""
-          alt="Gallery 3"
-          class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        /> -->
+        {#if galleryPreview[2]}
+          <img
+            src={galleryPreview[2].src}
+            alt="Gallery 3"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        {/if}
       </div>
 
       <div
         class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
       >
-        <!-- <img
-          src=""
-          alt="Gallery 4"
-          class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        /> -->
+        {#if galleryPreview[3]}
+          <img
+            src={galleryPreview[3].src}
+            alt="Gallery 4"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        {/if}
       </div>
 
       <div
         class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
       >
-        <!-- <img
-          src=""
-          alt="Gallery 5"
-          class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        /> -->
+        {#if galleryPreview[4]}
+          <img
+            src={galleryPreview[4].src}
+            alt="Gallery 5"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        {/if}
       </div>
 
       <div
         class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
       >
-        <!-- <img
-          src=""
-          alt="Gallery 6"
-          class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        /> -->
+        {#if galleryPreview[5]}
+          <img
+            src={galleryPreview[5].src}
+            alt="Gallery 6"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        {/if}
       </div>
 
       <div
         class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
       >
-        <!-- <img
-          src=""
-          alt="Gallery 7"
-          class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        /> -->
+        {#if galleryPreview[6]}
+          <img
+            src={galleryPreview[6].src}
+            alt="Gallery 7"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        {/if}
       </div>
     </div>
 
     <div class="mt-25 flex justify-center">
-      <a href="/">
+      <a href="/gallery">
         <Button.Root variant="blue" class="font-archivo flex items-center gap-2 px-10 py-6">
           Visit Gallery Page <span class="text-2xl leading-none">→</span>
         </Button.Root>

@@ -4,18 +4,27 @@
   import Footer from "$lib/components/Footer.svelte";
   import MouseTrail from "$lib/components/MouseTrail.svelte";
   import icon from "$lib/assets/gdgIcon.png";
-  
-  import Lenis from 'lenis';
-  import { onMount } from 'svelte';
+
+  import Lenis from "lenis";
+  import { onMount } from "svelte";
+  import { fade } from "svelte/transition";
+  import { page } from "$app/stores";
+  import { goto } from "$app/navigation";
 
   let { children } = $props();
 
   onMount(() => {
+    if (window.location.pathname !== "/") {
+      goto("/", { replaceState: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-      orientation: 'vertical', 
-      gestureOrientation: 'vertical',
+      duration: 1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: "vertical",
+      gestureOrientation: "vertical",
       smoothWheel: true,
     });
 
@@ -39,8 +48,16 @@
 
 <MouseTrail />
 
-<section class="bg-dots relative flex min-h-screen flex-col">
+<div
+  class="bg-dots font-open relative flex min-h-screen flex-col bg-white selection:bg-[#4285F4] selection:text-white"
+>
   <Navbar />
-  {@render children?.()}
+
+  {#key $page.url.pathname}
+    <main in:fade={{ duration: 400, delay: 100 }} class="flex-1">
+      {@render children?.()}
+    </main>
+  {/key}
+
   <Footer />
-</section>
+</div>
