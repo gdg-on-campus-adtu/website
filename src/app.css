@@ -108,6 +108,15 @@ html.lenis body {
 	overflow: hidden;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
+/* Firefox */
+html {
+	scrollbar-width: none;
+}
+
 
 @custom-variant dark (&:is(.dark *));
 

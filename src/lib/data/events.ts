@@ -1,13 +1,23 @@
-import kickoffImg from "$lib/assets/imgs/evnts/gdg-kickoff-evnt.webp";
-import iotImg from "$lib/assets/imgs/evnts/iot-evnt.webp";
-import uiuxImg from "$lib/assets/imgs/evnts/ui-ux-evnt.webp";
-import aimlImg from "$lib/assets/imgs/evnts/aiml-evnt.webp";
-import cloudStudyJamImg from "$lib/assets/imgs/evnts/cloudStudyJam-evnt.webp";
-import genaifestImg from "$lib/assets/imgs/evnts/genaifest-evnt.webp";
-import techBreakImg from "$lib/assets/imgs/evnts/techBreak-evnt.webp";
-import buildWithAIImg from "$lib/assets/imgs/evnts/buildWithAI-evnt.webp";
-import hacktoberfestImg from "$lib/assets/imgs/evnts/hacktober-evnt.webp";
-import genaiStudyJamImg from "$lib/assets/imgs/evnts/genaiStudyJam-evnt.webp";
+import aiml26 from "$lib/assets/imgs/evnts/aiml-26.webp";
+import buildWithAI24 from "$lib/assets/imgs/evnts/buildWithAI-24.webp";
+import cloud24 from "$lib/assets/imgs/evnts/cloud-24.webp";
+import cloudStudyJam23 from "$lib/assets/imgs/evnts/cloud-studyJam-23.webp";
+import cloudStudyJam24 from "$lib/assets/imgs/evnts/cloud-studyJam-24.webp";
+import cloudfest24 from "$lib/assets/imgs/evnts/cloudfest-24.webp";
+import cyber24 from "$lib/assets/imgs/evnts/cyber-24.webp";
+import gdgKickoff25 from "$lib/assets/imgs/evnts/gdgKickoff-25.webp";
+import gdgStart23 from "$lib/assets/imgs/evnts/gdgStart-23.webp";
+import genaiStudyJam24 from "$lib/assets/imgs/evnts/genai-studyJam-24.webp";
+import genaifest25 from "$lib/assets/imgs/evnts/genaifest-25.webp";
+import github23 from "$lib/assets/imgs/evnts/github-23.webp";
+import hacktoberfest24 from "$lib/assets/imgs/evnts/hacktoberfest-24.webp";
+import innovathon24 from "$lib/assets/imgs/evnts/innovathon-24.webp";
+import iot25 from "$lib/assets/imgs/evnts/iot-25.webp";
+import solutionChallenge23 from "$lib/assets/imgs/evnts/solutionChallenge-23.webp";
+import techBreak24 from "$lib/assets/imgs/evnts/techBreak-24.webp";
+import uiux24 from "$lib/assets/imgs/evnts/uiux-24.webp";
+import uiux25 from "$lib/assets/imgs/evnts/uiux-25.webp";
+import web24 from "$lib/assets/imgs/evnts/web-24.webp";
 
 interface EventItem {
     color: string;
@@ -29,23 +39,23 @@ const colors = {
 };
 
 export const upcomingEvents: EventItem[] = [
-/*     {
-        color: colors.gray,
-        image: aimlImg,
-        title: "Introduction to AI & Machine Learning",
-        date: "Jan 18, 2026",
-        type: "Online Meet",
-        linkText: "RSVP Now",
-        link: "https://gdg.community.dev/events/details/google-gdg-on-campus-assam-down-town-university-guwahati-india-presents-introduction-to-ai-amp-ml/",
-        description:
-            "An introductory info session on Artificial Intelligence & Machine Learning, conducted by GDG On Campus | Assam down town University, covering fundamentals, real-world applications, and how beginners can start their AI/ML journey.",
-    }, */
+    /*     {
+            color: colors.gray,
+            image: aimlImg,
+            title: "Introduction to AI & Machine Learning",
+            date: "Jan 18, 2026",
+            type: "Online Meet",
+            linkText: "RSVP Now",
+            link: "https://gdg.community.dev/events/details/google-gdg-on-campus-assam-down-town-university-guwahati-india-presents-introduction-to-ai-amp-ml/",
+            description:
+                "An introductory info session on Artificial Intelligence & Machine Learning, conducted by GDG On Campus | Assam down town University, covering fundamentals, real-world applications, and how beginners can start their AI/ML journey.",
+        }, */
 ];
 
 export const pastEvents: EventItem[] = [
     {
         color: colors.blue,
-        image: aimlImg,
+        image: aiml26,
         title: "Introduction to AI & Machine Learning",
         date: "Jan 18, 2026",
         type: "Online Meet",
@@ -56,27 +66,27 @@ export const pastEvents: EventItem[] = [
     },
     {
         color: colors.red,
-        image: uiuxImg,
+        image: uiux25,
         title: "Introduction to Design & UI/UX",
         date: "Nov 28, 2025",
-        type: "Info Session",
+        type: "Online Meet",
         link: "https://gdg.community.dev/events/details/google-gdg-on-campus-assam-down-town-university-guwahati-india-presents-introduction-to-design-amp-uiux/",
         description:
             "Kickstart your design journey! Learn the fundamentals of UI/UX design, including user research, wireframing, and visual design principles. This session is perfect for beginners looking to understand how intuitive and engaging digital experiences are crafted.",
     },
     {
         color: colors.green,
-        image: iotImg,
+        image: iot25,
         title: "Introduction to IoT",
         date: "Nov 22, 2025",
-        type: "Info Session",
+        type: "Online Meet",
         link: "https://gdg.community.dev/events/details/google-gdg-on-campus-assam-down-town-university-guwahati-india-presents-introduction-to-iot/",
         description:
             "Step into the world of smart technology! Get an introduction to the Internet of Things, exploring how devices connect, communicate, and automate the real world. Ideal for beginners curious about sensors, smart systems, and real-world IoT applications.",
     },
     {
         color: colors.yellow,
-        image: kickoffImg,
+        image: gdgKickoff25,
         title: "GDG Kickoff & Git Workshop",
         date: "Nov 06, 2025",
         type: "Workshop / Study Group",
@@ -86,7 +96,7 @@ export const pastEvents: EventItem[] = [
     },
     {
         color: colors.blue,
-        image: cloudStudyJamImg,
+        image: cloudStudyJam24,
         title: "Cloud Study Jam",
         date: "Oct 9, 2025",
         type: "Info Session",
@@ -96,7 +106,7 @@ export const pastEvents: EventItem[] = [
     },
     {
         color: colors.red,
-        image: genaifestImg,
+        image: genaifest25,
         title: "Build with AI",
         date: "Feb 13, 2025",
         type: "Speaker Session / Tech Talk",
@@ -106,7 +116,7 @@ export const pastEvents: EventItem[] = [
     },
     {
         color: colors.green,
-        image: techBreakImg,
+        image: techBreak24,
         title: "Tech Winter Break",
         date: "Dec 21, 2024",
         type: "Info Session",
@@ -116,7 +126,7 @@ export const pastEvents: EventItem[] = [
     },
     {
         color: colors.yellow,
-        image: buildWithAIImg,
+        image: buildWithAI24,
         title: "Build with AI",
         date: "Nov 7, 2024",
         type: "Workshop / Study Group",
@@ -126,22 +136,122 @@ export const pastEvents: EventItem[] = [
     },
     {
         color: colors.blue,
-        image: hacktoberfestImg,
+        image: hacktoberfest24,
         title: "Hacktoberfest",
         date: "Oct 3, 2024",
-        type: "Speaker Session / Tech Talk",
+        type: "Info Session",
         link: "https://gdg.community.dev/events/details/google-gdg-on-campus-assam-down-town-university-guwahati-india-presents-build-with-ai/",
         description:
             "This quick session will be about the ongoing Hacktoberfest 2024! A month-long celebration of all things open source and perhaps the best opportunity to learn more and contribute to open-source!",
     },
     {
         color: colors.red,
-        image: genaiStudyJamImg,
+        image: genaiStudyJam24,
         title: "GenAI Study Jam",
         date: "17 Sep, 2024",
         type: "Info Session",
         link: "https://gdg.community.dev/events/details/google-gdg-on-campus-assam-down-town-university-guwahati-india-presents-build-with-ai/",
         description:
             "A short session about GDG On Campus and the upcoming GenAI Study Jams.",
+    },
+    {
+        color: colors.green,
+        image: innovathon24,
+        title: "Innovathon 2024",
+        date: "4 Apr, 2024",
+        type: "Hackathon",
+        link: "https://www.linkedin.com/feed/update/urn:li:activity:7179332902424338433/",
+        description:
+            "Join us for Innovathon, the ultimate hackathon experience, part of Envision: the 1st edition of Entrepreneurship Summit organized by Assam down town University.",
+    },
+    {
+        color: colors.yellow,
+        image: cloudfest24,
+        title: "Cloud Fest 2024",
+        date: "19 Mar, 2024",
+        type: "Speaker Session / Tech Talk",
+        link: "https://www.linkedin.com/feed/update/urn:li:activity:7179332902424338433/",
+        description:
+            "In this exciting gdsc's event, we'll guide you through a dynamic agenda designed to ignite your passion for technology and cloud computing.",
+    },
+    {
+        color: colors.blue,
+        image: uiux24,
+        title: "UI/UX & Documentation",
+        date: "30 Jan, 2024",
+        type: "Online Meet",
+        link: "https://www.linkedin.com/posts/gdg-on-campus-adtu_dear-gdsc-enthusiasts-do-you-want-to-activity-7157249714793369600-oLw0/",
+        description:
+            "We are excited to invite you to our upcoming event - the 'UI/ UX & Documentation Google info session' by GDSC(AdtU). This event offers an immersive dive into the world of UI/UX design and documentation, and we can't wait for you to join us for this exciting journey!",
+    },
+    {
+        color: colors.red,
+        image: cloud24,
+        title: "Cloud Computing Event",
+        date: "27 Jan, 2024",
+        type: "Online Meet",
+        link: "https://www.linkedin.com/posts/gdg-on-campus-adtu_ready-to-take-your-digital-game-to-the-activity-7156134366207741961-qnCf/",
+        description:
+            "Ready to take your digital game to the next level? The clouds are beckoning, and we're inviting you to an Info Session on Cloud Computing that'll blast you off into a world of endless possibilities!",
+    },
+    {
+        color: colors.green,
+        image: cyber24,
+        title: "Cyber Security Event",
+        date: "18 Jan, 2024",
+        type: "Online Meet",
+        link: "https://www.linkedin.com/posts/gdg-on-campus-adtu_secure-your-future-dive-into-cybersecurity-activity-7153055140663480321-mFSh/",
+        description:
+            "Do you dream of building defences against cyber threats and safeguarding the online world? Then join us for this info session and ignite your spark in cybersecurity!",
+    },
+    {
+        color: colors.yellow,
+        image: web24,
+        title: "Web Development Event",
+        date: "12 Jan, 2024",
+        type: "Online Meet",
+        link: "https://www.linkedin.com/posts/gdg-on-campus-adtu_first-web-dev-session-of-the-year-ignite-activity-7150781534168334338-jaFh/",
+        description:
+            "First Web Dev Session of the Year! Ignite your passion in a domain that sparks student curiosity.",
+    },
+    {
+        color: colors.blue,
+        image: solutionChallenge23,
+        title: "Solution Challenge 2023",
+        date: "24 Dec, 2023",
+        type: "Info Session",
+        link: "https://www.linkedin.com/posts/gdg-on-campus-adtu_gdsc-google-googlesolutionchallenge-activity-7143300257257353217-XMKl/",
+        description:
+            "Join us for this info session and know more about Solution Challenge 2023!",
+    },
+    {
+        color: colors.red,
+        image: github23,
+        title: "Git & GitHub Workshop",
+        date: "14 Oct, 2023",
+        type: "Workshop / Study Group",
+        link: "https://www.linkedin.com/posts/gdg-on-campus-adtu_gdsc-google-googlesolutionchallenge-activity-7143300257257353217-XMKl/",
+        description:
+            "Join us on Saturday, October 14th, 2023, at 10:30 AM in Room 207 for an empowering workshop on Git and GitHub!",
+    },
+    {
+        color: colors.green,
+        image: cloudStudyJam23,
+        title: "Cloud Study Jam Introduction",
+        date: "27 Jan, 2024",
+        type: "Info Session",
+        link: "https://www.linkedin.com/posts/gdg-on-campus-adtu_exciting-news-first-ever-offline-gdsc-activity-7111545296760823809-jEk0/",
+        description:
+            "Google Cloud Study Jam Kickoff: We're diving into the world of cloud computing! Starting next month, we'll embark on an exciting journey to learn the fundamentals of cloud technology. Whether you're a beginner or looking to enhance your cloud skills, this program is tailored just for you.",
+    },
+    {
+        color: colors.yellow,
+        image: gdgStart23,
+        title: "Inauguration of GDG On Campus | Assam down town University",
+        date: "22 Sep, 2023",
+        type: "Inauguration",
+        link: "https://www.linkedin.com/posts/gdg-on-campus-adtu_we-are-thrilled-to-announce-the-grand-inauguration-activity-7110634908032675840-YHSX/",
+        description:
+            "We are thrilled to announce the grand inauguration of GDG On Campus | Assam down town University. Join us for a day of celebration and excitement as we welcome our new members and celebrate the launch of our community.",
     },
 ];

@@ -4,6 +4,8 @@
   import * as Button from "$lib/components/ui/button/index.js";
   import { pastEvents } from "$lib/data/events";
 
+  import { galleryItems } from "$lib/data/gallery";
+
   interface HeadlineWord {
     text: string;
     color: string;
@@ -16,6 +18,7 @@
   ];
 
   const recentEvents = pastEvents.slice(0, 3);
+  const galleryPreview = [...galleryItems].reverse().slice(0, 7);
 </script>
 
 <section id="home" class="relative flex min-h-screen flex-col justify-center overflow-hidden">
@@ -146,36 +149,98 @@
     <div class="mb-16 text-center md:mb-24">
       <h2 class="font-monocraft pixel-text mb-6 text-4xl text-[#4285F4] md:text-6xl">Gallery</h2>
       <p class="font-space mx-auto max-w-2xl text-base text-gray-500 md:text-lg">
-        Take a look at some of our recent events and activities.
+        Visual stories from the GDG ADTU community.
       </p>
     </div>
 
     <div class="grid h-auto grid-cols-1 gap-4 md:h-200 md:grid-cols-4 md:grid-rows-3">
       <div
         class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-2 md:row-span-2"
-      ></div>
+      >
+        {#if galleryPreview[0]}
+          <img
+            src={galleryPreview[0].src}
+            alt="Gallery 1"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        {/if}
+      </div>
+
       <div
         class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-2 md:row-span-1"
-      ></div>
+      >
+        {#if galleryPreview[1]}
+          <img
+            src={galleryPreview[1].src}
+            alt="Gallery 2"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        {/if}
+      </div>
+
       <div
         class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-2 md:row-span-1"
-      ></div>
+      >
+        {#if galleryPreview[2]}
+          <img
+            src={galleryPreview[2].src}
+            alt="Gallery 3"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        {/if}
+      </div>
+
       <div
         class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
-      ></div>
+      >
+        {#if galleryPreview[3]}
+          <img
+            src={galleryPreview[3].src}
+            alt="Gallery 4"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        {/if}
+      </div>
+
       <div
         class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
-      ></div>
+      >
+        {#if galleryPreview[4]}
+          <img
+            src={galleryPreview[4].src}
+            alt="Gallery 5"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        {/if}
+      </div>
+
       <div
         class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
-      ></div>
+      >
+        {#if galleryPreview[5]}
+          <img
+            src={galleryPreview[5].src}
+            alt="Gallery 6"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        {/if}
+      </div>
+
       <div
         class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
-      ></div>
+      >
+        {#if galleryPreview[6]}
+          <img
+            src={galleryPreview[6].src}
+            alt="Gallery 7"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        {/if}
+      </div>
     </div>
 
     <div class="mt-25 flex justify-center">
-      <a href="/">
+      <a href="/gallery">
         <Button.Root variant="blue" class="font-archivo flex items-center gap-2 px-10 py-6">
           Visit Gallery Page <span class="text-2xl leading-none">→</span>
         </Button.Root>

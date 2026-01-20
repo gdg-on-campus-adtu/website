@@ -8,7 +8,7 @@
   let isRecruiting = false;
 </script>
 
-<div class="relative flex min-h-screen flex-col pt-50 pb-20">
+<div class="relative flex min-h-screen flex-col pt-25 pb-20 md:pt-50">
   <div class="container mx-auto mb-20 px-6 text-center md:px-16">
     <div>
       <h1 class="font-monocraft pixel-text mb-6 text-5xl text-[#4285F4] md:text-7xl">

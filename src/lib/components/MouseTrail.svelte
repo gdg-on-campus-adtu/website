@@ -34,6 +34,12 @@
   }
 
   onMount(() => {
+    // 1. Performance Check: Do not start the animation loop on mobile/touch devices
+    const isMobile = window.matchMedia("(max-width: 768px)").matches || 
+                     window.matchMedia("(pointer: coarse)").matches;
+
+    if (isMobile) return;
+
     if (typeof window !== "undefined") {
       mouse.x = window.innerWidth / 2;
       mouse.y = window.innerHeight / 2;
@@ -77,7 +83,7 @@
 <svelte:window onmousemove={handleMouseMove} />
 
 <svg
-  class="pointer-events-none fixed inset-0 z-50 h-full w-full bg-transparent"
+  class="hidden md:block pointer-events-none fixed inset-0 z-50 h-full w-full bg-transparent"
   shape-rendering="geometricPrecision"
 >
   {#each trails as trail}

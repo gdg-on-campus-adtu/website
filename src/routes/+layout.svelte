@@ -9,10 +9,17 @@
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
   import { page } from "$app/stores";
+  import { goto } from "$app/navigation";
 
   let { children } = $props();
 
   onMount(() => {
+    if (window.location.pathname !== "/") {
+      goto("/", { replaceState: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+
     const lenis = new Lenis({
       duration: 1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
