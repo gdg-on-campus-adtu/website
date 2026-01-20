@@ -3,11 +3,9 @@
   import Card2 from "$lib/components/ui/card/card2.svelte";
   import * as Button from "$lib/components/ui/button/index.js";
   import { fly } from "svelte/transition";
-
   import { upcomingEvents, pastEvents } from "$lib/data/events";
 
   let visibleCount = 6;
-
   function loadMore() {
     visibleCount += 3;
   }
@@ -47,7 +45,6 @@
                 {evt.type}
               </span>
             </div>
-
             <a
               href={evt.link}
               target="_blank"
@@ -74,14 +71,11 @@
         >
           🚧
         </div>
-
         <h3 class="font-monocraft mb-3 text-2xl text-black md:text-3xl">Cooking Something Up...</h3>
-
         <p class="font-space mb-8 max-w-lg text-lg text-gray-500">
           There are no upcoming events scheduled right now, but our team is planning the next big
-          thing. Join our community to get notified first!
+          thing.
         </p>
-
         <a
           href="https://gdg.community.dev/gdg-on-campus-assam-down-town-university-guwahati-india/"
           target="_blank"
@@ -104,34 +98,28 @@
       <h2 class="font-monocraft pixel-text text-3xl text-gray-500 md:text-5xl">Past Events</h2>
       <div class="h-1 flex-1 rounded-full bg-gray-200"></div>
     </div>
-
     <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
       {#each pastEvents.slice(0, visibleCount) as evt, i (evt.title + evt.date)}
         <div in:fly={{ y: 50, duration: 500, delay: i * 40 }} class="h-full">
           <Card color={evt.color} title={evt.title} description={evt.description} image={evt.image}>
             <div class="font-space flex w-full items-center justify-between">
               <div class="flex flex-col">
-                <span class="border-b-2 border-black text-sm font-bold">
-                  {evt.date}
-                </span>
+                <span class="border-b-2 border-black text-sm font-bold">{evt.date}</span>
                 <span class="mt-1 text-xs font-medium opacity-70">{evt.type}</span>
               </div>
-
               <a
                 href={evt.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="group flex items-center gap-1 text-sm font-bold text-black transition-all hover:opacity-70"
               >
-                Read More
-                <span class="transition-transform group-hover:translate-x-1">→</span>
+                Read More <span class="transition-transform group-hover:translate-x-1">→</span>
               </a>
             </div>
           </Card>
         </div>
       {/each}
     </div>
-
     {#if visibleCount < pastEvents.length}
       <div class="mt-25 flex justify-center pb-10">
         <Button.Root

@@ -2,7 +2,6 @@
   import communityImg from "$lib/assets/imgs/gallery/community-img.webp";
   import Card from "$lib/components/ui/card/card.svelte";
   import * as Button from "$lib/components/ui/button/index.js";
-
   import { pastEvents } from "$lib/data/events";
 
   interface HeadlineWord {
@@ -19,10 +18,7 @@
   const recentEvents = pastEvents.slice(0, 3);
 </script>
 
-<section
-  id="home"
-  class="bg-dots relative flex min-h-screen flex-col justify-center overflow-hidden"
->
+<section id="home" class="relative flex min-h-screen flex-col justify-center overflow-hidden">
   <div
     class="font-space relative z-10 flex flex-1 flex-col items-center justify-center px-4 text-center select-none"
   >
@@ -47,10 +43,7 @@
   </div>
 </section>
 
-<section
-  id="about"
-  class="bg-dots flex min-h-screen w-full flex-col justify-center bg-white px-6 md:px-16"
->
+<section id="about" class="flex min-h-screen w-full flex-col justify-center px-6 md:px-16">
   <div class="mx-auto w-full max-w-7xl">
     <h2 class="font-monocraft pixel-text mb-30 text-center text-4xl text-[#4285F4] md:text-6xl">
       What does GDG On Campus-ADTU do?
@@ -61,7 +54,7 @@
       >
         <ul class="list-disc space-y-5 pl-5">
           <li>
-            <span class="text-xl font-bold text-[#4285F4]">Tech Hub & Teams:</span>
+            <span class="font-open text-xl font-semibold text-[#4285F4]">Tech Hub & Teams:</span>
             GDG On Campus-ADTU is your hub for all things tech! We have focused teams in
             <span class="font-bold italic underline underline-offset-2"
               >AI/ML, Android, Web, Cyber Security Game Dev and more</span
@@ -69,13 +62,13 @@
             to help students explore and master the latest technology.
           </li>
           <li>
-            <span class="text-xl font-bold text-[#F4BB19]">Flagship Event:</span>
+            <span class="font-open text-xl font-semibold text-[#F4BB19]">Flagship Event:</span>
             Our main event, the
             <span class="font-bold italic underline underline-offset-2">ByteHacks Hackathon</span>,
             reflects our dedication to innovation, collaboration, and hands-on learning.
           </li>
           <li>
-            <span class="text-xl font-bold text-[#5FA953]">Skill Building:</span>
+            <span class="font-open text-xl font-semibold text-[#5FA953]">Skill Building:</span>
             Through
             <span class="font-bold italic underline underline-offset-2"
               >workshops, tech talks, and interactive sessions</span
@@ -83,7 +76,7 @@
             <span class="font-bold italic underline">practical, real-world skills</span>.
           </li>
           <li>
-            <span class="text-xl font-bold text-[#E34735]">Community:</span>
+            <span class="font-open text-xl font-semibold text-[#FF0028]">Community:</span>
             Join us to become part of a
             <span class="font-bold italic underline underline-offset-2">vibrant tech ecosystem</span
             >, learn from peers and mentors, and bring your ideas to life!
@@ -102,10 +95,7 @@
   </div>
 </section>
 
-<section
-  id="events"
-  class="bg-dots flex w-full flex-col justify-center bg-white px-6 pt-20 pb-10 md:px-16"
->
+<section id="events" class="flex w-full flex-col justify-center px-6 pt-20 pb-10 md:px-16">
   <div class="mx-auto w-full max-w-7xl">
     <div class="mb-16 text-center md:mb-24">
       <h2 class="font-monocraft pixel-text mb-6 text-4xl text-[#4285F4] md:text-6xl">
@@ -150,7 +140,7 @@
 
 <section
   id="gallery"
-  class="bg-dots flex min-h-screen w-full flex-col justify-center bg-white px-6 py-20 pt-60 md:px-16"
+  class="flex min-h-screen w-full flex-col justify-center px-6 py-20 pt-60 md:px-16"
 >
   <div class="mx-auto w-full max-w-7xl">
     <div class="mb-16 text-center md:mb-24">
@@ -164,27 +154,21 @@
       <div
         class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-2 md:row-span-2"
       ></div>
-
       <div
         class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-2 md:row-span-1"
       ></div>
-
       <div
         class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-2 md:row-span-1"
       ></div>
-
       <div
         class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
       ></div>
-
       <div
         class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
       ></div>
-
       <div
         class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
       ></div>
-
       <div
         class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
       ></div>

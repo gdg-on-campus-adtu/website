@@ -7,6 +7,8 @@
 
   import Lenis from "lenis";
   import { onMount } from "svelte";
+  import { fade } from "svelte/transition";
+  import { page } from "$app/stores";
 
   let { children } = $props();
 
@@ -39,8 +41,16 @@
 
 <MouseTrail />
 
-<section class="bg-dots relative flex min-h-screen flex-col">
+<div
+  class="bg-dots font-open relative flex min-h-screen flex-col bg-white selection:bg-[#4285F4] selection:text-white"
+>
   <Navbar />
-  {@render children?.()}
+
+  {#key $page.url.pathname}
+    <main in:fade={{ duration: 400, delay: 100 }} class="flex-1">
+      {@render children?.()}
+    </main>
+  {/key}
+
   <Footer />
-</section>
+</div>

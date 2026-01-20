@@ -2,18 +2,16 @@
   import Card from "$lib/components/ui/card/card.svelte";
   import * as Button from "$lib/components/ui/button/index.js";
   import { projects } from "$lib/data/projects";
-
   import { fly, fade } from "svelte/transition";
   import { Github, ExternalLink, User } from "@lucide/svelte";
 
   let visibleCount = 2;
-
   function loadMore() {
     visibleCount += 2;
   }
 </script>
 
-<div class="bg-dots relative flex min-h-screen flex-col pt-50 pb-20">
+<div class="relative flex min-h-screen flex-col pt-50 pb-20">
   <div class="container mx-auto mb-16 px-6 text-center md:px-16">
     <h1 class="font-monocraft pixel-text mb-6 text-5xl text-[#4285F4] md:text-7xl">Projects</h1>
     <p class="font-space mx-auto max-w-2xl text-base text-gray-500 md:text-lg">
@@ -54,9 +52,7 @@
                         {project.author.name}
                       </a>
                     {:else}
-                      <span class="text-sm font-bold text-black">
-                        {project.author.name}
-                      </span>
+                      <span class="text-sm font-bold text-black">{project.author.name}</span>
                     {/if}
                   </div>
                 </div>
@@ -70,7 +66,6 @@
                       </span>
                     {/each}
                   </div>
-
                   <div class="flex flex-wrap items-center gap-4 border-t-2 border-black/10 pt-4">
                     {#if project.links.repo}
                       <a
@@ -79,11 +74,9 @@
                         rel="noopener noreferrer"
                         class="group flex items-center gap-2 text-sm font-bold text-black transition-opacity hover:opacity-70"
                       >
-                        <Github size={18} />
-                        View Code
+                        <Github size={18} /> View Code
                       </a>
                     {/if}
-
                     {#if project.links.demo}
                       <a
                         href={project.links.demo}
@@ -91,8 +84,7 @@
                         rel="noopener noreferrer"
                         class="group flex items-center gap-2 text-sm font-bold text-black transition-opacity hover:opacity-70"
                       >
-                        <ExternalLink size={18} />
-                        Live Demo
+                        <ExternalLink size={18} /> Live Demo
                       </a>
                     {/if}
                   </div>
@@ -102,7 +94,6 @@
           </div>
         {/each}
       </div>
-
       {#if visibleCount < projects.length}
         <div class="mt-20 flex justify-center" in:fade>
           <Button.Root
@@ -125,14 +116,11 @@
           <div
             class="absolute bottom-0 left-0 -mb-10 -ml-10 h-32 w-32 rounded-full border-[3px] border-black bg-[#4285F4]"
           ></div>
-
           <div class="relative z-10 flex flex-col items-center text-center">
             <h2 class="font-monocraft text-3xl text-black md:text-5xl">Built Something Awesome?</h2>
             <p class="font-space mt-4 mb-8 max-w-xl text-lg font-medium text-black/80">
-              Don't keep your code hidden. Submit your project and showcase your innovation to the
-              entire community.
+              Don't keep your code hidden. Submit your project and showcase your innovation.
             </p>
-
             <a href="mailto:gdg@adtu.in">
               <Button.Root
                 variant="blue"
@@ -155,33 +143,26 @@
         >
           <span class="text-6xl">🚀</span>
         </div>
-
         <h2 class="font-monocraft mb-4 text-3xl text-black md:text-4xl">The Lab is Quiet...</h2>
-
         <p class="font-space mb-10 max-w-lg text-lg text-gray-500">
           The stage is set, but the spotlight is waiting. Be the pioneer—submit your project and be
           the first to showcase your work here!
         </p>
-
         <div class="flex flex-col gap-4 md:flex-row">
           <a href="mailto:gdg@adtu.in">
             <Button.Root
               variant="blue"
               size="lg"
-              class="border-2 border-black bg-[#4285F4] text-white"
+              class="border-2 border-black bg-[#4285F4] text-white">Submit Your Project</Button.Root
             >
-              Submit Your Project
-            </Button.Root>
           </a>
-
           <a href="https://github.com" target="_blank">
             <Button.Root
               variant="blue"
               size="lg"
               class="border-2 border-black bg-white text-black hover:bg-yellow-50"
+              >Visit our GitHub</Button.Root
             >
-              Visit our GitHub
-            </Button.Root>
           </a>
         </div>
       </div>
