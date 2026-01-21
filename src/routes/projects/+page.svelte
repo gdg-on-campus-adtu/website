@@ -22,7 +22,7 @@
 
   <section class="container mx-auto px-6 md:px-16">
     {#if projects.length > 0}
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2">
+      <div class="grid grid-cols-1 gap-12 xl:grid-cols-2">
         {#each projects.slice(0, visibleCount) as project, i (project.id)}
           <div in:fly={{ y: 50, duration: 500, delay: i * 40 }} class="h-full">
             <Card
@@ -127,7 +127,9 @@
                 size="lg"
                 class="border-2 border-black bg-white text-black hover:bg-gray-200"
               >
-                Submit for Showcase <span class="ml-2 text-xl">→</span>
+                <span class="md:hidden">Submit</span>
+                <span class="hidden md:inline">Submit for Showcase</span>
+                <span class="ml-2 text-xl">→</span>
               </Button.Root>
             </a>
           </div>

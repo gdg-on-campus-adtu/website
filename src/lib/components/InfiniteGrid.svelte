@@ -134,6 +134,16 @@
     items = fn(items);
   }
 
+  function handleWheel(e: WheelEvent) {
+    e.preventDefault();
+
+    const currentX = x.get();
+    const currentY = y.get();
+
+    x.set(currentX - e.deltaX);
+    y.set(currentY - e.deltaY);
+  }
+
   onMount(() => {
     setupItems();
     const unsubscribeX = x.onChange(onUpdate);
@@ -151,8 +161,9 @@
 
 <div
   bind:this={containerRef}
-  class="absolute inset-0 cursor-grab overflow-hidden active:cursor-grabbing"
+  class="absolute inset-0 cursor-grab touch-none overflow-hidden active:cursor-grabbing"
   onpointerdown={(e) => dragControls.start(e)}
+  onwheel={handleWheel}
 >
   <Motion
     drag

@@ -106,7 +106,7 @@
     </div>
   {/if}
 
-  <div class="fixed right-0 bottom-10 left-0 z-30 hidden justify-center gap-4 md:flex">
+  <div class="fixed right-0 bottom-32 left-0 z-30 hidden justify-center gap-4 md:flex lg:bottom-10">
     <button
       onclick={() => toggleMode("scroll")}
       aria-label="Switch to scroll view"
