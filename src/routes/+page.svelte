@@ -17,7 +17,8 @@
     { text: "create.", color: "text-[#F4BB19]" },
   ];
 
-  const recentEvents = pastEvents.slice(0, 3);
+  const recentEvents = [...pastEvents].reverse().slice(0, 3);
+
   const galleryPreview = [...galleryItems].reverse().slice(0, 7);
 </script>
 
@@ -113,18 +114,17 @@
       {#each recentEvents as evt}
         <Card color={evt.color} title={evt.title} description={evt.description} image={evt.image}>
           <div class="font-space flex w-full items-center justify-between">
-            <span class="border-b-2 border-black text-sm font-bold">
-              {evt.date}
-            </span>
-
+            <div class="flex flex-col">
+              <span class="border-b-2 border-black text-sm font-bold">{evt.date}</span>
+              <span class="mt-1 text-xs font-medium opacity-70">{evt.type}</span>
+            </div>
             <a
               href={evt.link}
               target="_blank"
               rel="noopener noreferrer"
               class="group flex items-center gap-1 text-sm font-bold text-black transition-all hover:opacity-70"
             >
-              Read more
-              <span class="transition-transform group-hover:translate-x-1">→</span>
+              Read More <span class="transition-transform group-hover:translate-x-1">→</span>
             </a>
           </div>
         </Card>

@@ -6,6 +6,8 @@
   import { upcomingEvents, pastEvents } from "$lib/data/events";
 
   let visibleCount = 6;
+  const reversedPastEvents = [...pastEvents].reverse();
+
   function loadMore() {
     visibleCount += 3;
   }
@@ -99,7 +101,7 @@
       <div class="h-1 flex-1 rounded-full bg-gray-200"></div>
     </div>
     <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
-      {#each pastEvents.slice(0, visibleCount) as evt, i (evt.title + evt.date)}
+      {#each reversedPastEvents.slice(0, visibleCount) as evt, i (evt.title + evt.date)}
         <div in:fly={{ y: 50, duration: 500, delay: i * 40 }} class="h-full">
           <Card color={evt.color} title={evt.title} description={evt.description} image={evt.image}>
             <div class="font-space flex w-full items-center justify-between">
@@ -120,7 +122,7 @@
         </div>
       {/each}
     </div>
-    {#if visibleCount < pastEvents.length}
+    {#if visibleCount < reversedPastEvents.length}
       <div class="mt-25 flex justify-center pb-10">
         <Button.Root
           variant="blue"

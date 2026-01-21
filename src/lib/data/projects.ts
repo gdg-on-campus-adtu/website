@@ -27,6 +27,8 @@ const colors = {
   gray: "bg-gray-200"
 };
 
+// Add new projects at the end of the array
+
 export const projects: ProjectItem[] = [
   {
     id: "reinforced-shrine-adventure",

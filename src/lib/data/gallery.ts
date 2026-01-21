@@ -18,6 +18,8 @@ export interface GalleryItem {
     // description: string;
 }
 
+// Add new images at the end of the array
+
 export const galleryItems: GalleryItem[] = [
     { id: 1, src: img1 },
     { id: 2, src: img2 },
