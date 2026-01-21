@@ -69,15 +69,17 @@
         class="flex min-h-75 w-full flex-col items-center justify-center rounded-xl border-2 border-dashed border-black/30 bg-gray-50 p-8 text-center md:p-12"
       >
         <div
-          class="mb-6 flex h-20 w-20 items-center justify-center rounded-full border-2 border-black bg-yellow-100 text-5xl shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
+          class="mb-6 flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full border-2 border-black bg-yellow-100 text-3xl md:text-5xl shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
         >
           🚧
         </div>
-        <h3 class="font-monocraft mb-3 text-2xl text-black md:text-3xl">Cooking Something Up...</h3>
-        <p class="font-space mb-8 max-w-lg text-lg text-gray-500">
+        
+        <h3 class="font-monocraft mb-3 text-[0.94rem] text-black md:text-3xl">Cooking Something Up...</h3>
+        <p class="font-space mb-8 max-w-lg text-[0.8rem] text-gray-500 md:text-lg">
           There are no upcoming events scheduled right now, but our team is planning the next big
           thing.
         </p>
+        
         <a
           href="https://gdg.community.dev/gdg-on-campus-assam-down-town-university-guwahati-india/"
           target="_blank"
@@ -100,7 +102,8 @@
       <h2 class="font-monocraft pixel-text text-3xl text-gray-500 md:text-5xl">Past Events</h2>
       <div class="h-1 flex-1 rounded-full bg-gray-200"></div>
     </div>
-    <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+    
+    <div class="grid grid-cols-1 gap-12 xl:grid-cols-3">
       {#each reversedPastEvents.slice(0, visibleCount) as evt, i (evt.title + evt.date)}
         <div in:fly={{ y: 50, duration: 500, delay: i * 40 }} class="h-full">
           <Card color={evt.color} title={evt.title} description={evt.description} image={evt.image}>
