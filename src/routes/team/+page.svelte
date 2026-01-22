@@ -22,7 +22,7 @@
   </div>
 
   <section class="container mx-auto px-6 md:px-16">
-    <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid grid-cols-1 gap-12 xl:grid-cols-3">
       {#each teamMembers as member, i (member.id)}
         <div class="h-full">
           <Card

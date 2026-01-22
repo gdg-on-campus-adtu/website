@@ -43,13 +43,13 @@
   });
 </script>
 
-<div class="font-open relative w-full bg-white select-none">
+<div class="font-open relative w-full bg-transparent select-none">
   <div
     class={clsx(
       "pointer-events-none flex flex-col items-center justify-center px-6",
       viewMode === "grid"
         ? "fixed inset-0 z-0 h-full w-full backdrop-blur-none"
-        : "relative z-10 w-full bg-white pt-25 pb-10 md:pt-50",
+        : "relative z-10 w-full bg-transparent pt-25 pb-10 md:pt-50",
     )}
   >
     {#key viewMode}
@@ -106,7 +106,7 @@
     </div>
   {/if}
 
-  <div class="fixed right-0 bottom-10 left-0 z-30 hidden justify-center gap-4 md:flex">
+  <div class="fixed right-0 bottom-32 left-0 z-30 hidden justify-center gap-4 md:flex lg:bottom-10">
     <button
       onclick={() => toggleMode("scroll")}
       aria-label="Switch to scroll view"

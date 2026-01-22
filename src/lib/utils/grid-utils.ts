@@ -1,5 +1,3 @@
-// src/lib/utils/grid-utils.ts
-
 export type Point = { x: number; y: number };
 export type Bounds = { top: number; bottom: number; left: number; right: number };
 

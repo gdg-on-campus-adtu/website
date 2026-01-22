@@ -3,7 +3,6 @@
   import Card from "$lib/components/ui/card/card.svelte";
   import * as Button from "$lib/components/ui/button/index.js";
   import { pastEvents } from "$lib/data/events";
-
   import { galleryItems } from "$lib/data/gallery";
 
   interface HeadlineWord {
@@ -12,26 +11,31 @@
   }
 
   const headline: HeadlineWord[] = [
-    { text: "code.", color: "text-[#FF0028]" },
-    { text: "connect.", color: "text-[#5FA953]" },
-    { text: "create.", color: "text-[#F4BB19]" },
+    { text: "code", color: "text-[#FF0028]" },
+    { text: "connect", color: "text-[#5FA953]" },
+    { text: "create", color: "text-[#F4BB19]" },
   ];
 
-  const recentEvents = pastEvents.slice(0, 3);
+  const recentEvents = [...pastEvents].reverse().slice(0, 3);
   const galleryPreview = [...galleryItems].reverse().slice(0, 7);
 </script>
 
-<section id="home" class="relative flex min-h-screen flex-col justify-center overflow-hidden">
+<section
+  id="home"
+  class="relative flex min-h-screen flex-col justify-center overflow-hidden pb-40 md:pb-0 lg:pb-0"
+>
   <div
     class="font-space relative z-10 flex flex-1 flex-col items-center justify-center px-4 text-center select-none"
   >
-    <p class="mb-6 text-base text-[#4285F4] md:text-lg">
-      Official Chapter · Google Developer Group
-    </p>
+    <p class="mb-6 text-sm text-[#4285F4] md:text-lg">Official Chapter · Google Developer Group</p>
 
-    <h1 class="font-monocraft pixel-text mb-13 flex flex-wrap justify-center text-6xl md:text-8xl">
+    <h1
+      class="font-monocraft pixel-text mb-13 flex flex-col items-center justify-center gap-4 text-6xl md:text-8xl lg:flex-row lg:gap-6"
+    >
       {#each headline as word}
-        <span class={word.color}>{word.text}</span>
+        <span class={word.color}>
+          {word.text}<span class="hidden lg:inline">.</span>
+        </span>
       {/each}
     </h1>
 
@@ -39,9 +43,17 @@
       Join the Google Developer Group at Assam down town University to learn, collaborate, and build
       amazing things with the latest Google technologies.
     </p>
+
+    <div class="mt-10 flex justify-center lg:hidden">
+      <a href="https://gdg.community.dev/gdg-on-campus-assam-down-town-university-guwahati-india/">
+        <Button.Root variant="blue" class="font-archivo h-12 px-8 text-base">
+          Join the Community
+        </Button.Root>
+      </a>
+    </div>
   </div>
 
-  <div class="relative z-10 flex justify-center pb-6 select-none">
+  <div class="relative z-10 hidden justify-center pb-6 select-none lg:flex">
     <span class="scroll-indicator text-5xl text-[#4285F4]">⌄</span>
   </div>
 </section>
@@ -51,7 +63,7 @@
     <h2 class="font-monocraft pixel-text mb-30 text-center text-4xl text-[#4285F4] md:text-6xl">
       What does GDG On Campus-ADTU do?
     </h2>
-    <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
       <div
         class="font-space text-justify text-base leading-relaxed font-medium text-black md:text-left md:text-lg"
       >
@@ -87,7 +99,7 @@
         </ul>
       </div>
 
-      <div class="relative flex justify-center md:justify-end">
+      <div class="relative flex justify-center lg:justify-end">
         <div
           class="h-64 w-full border-[3px] border-black bg-[#D9D9D9] shadow-[10px_10px_0px_0px_#000] md:h-80 md:w-[90%]"
         >
@@ -109,25 +121,26 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-3">
       {#each recentEvents as evt}
-        <Card color={evt.color} title={evt.title} description={evt.description} image={evt.image}>
-          <div class="font-space flex w-full items-center justify-between">
-            <span class="border-b-2 border-black text-sm font-bold">
-              {evt.date}
-            </span>
-
-            <a
-              href={evt.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group flex items-center gap-1 text-sm font-bold text-black transition-all hover:opacity-70"
-            >
-              Read more
-              <span class="transition-transform group-hover:translate-x-1">→</span>
-            </a>
-          </div>
-        </Card>
+        <div>
+          <Card color={evt.color} title={evt.title} description={evt.description} image={evt.image}>
+            <div class="font-space flex w-full items-center justify-between">
+              <div class="flex flex-col">
+                <span class="border-b-2 border-black text-sm font-bold">{evt.date}</span>
+                <span class="mt-1 text-xs font-medium opacity-70">{evt.type}</span>
+              </div>
+              <a
+                href={evt.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex items-center gap-1 text-sm font-bold text-black transition-all hover:opacity-70"
+              >
+                Read More <span class="transition-transform group-hover:translate-x-1">→</span>
+              </a>
+            </div>
+          </Card>
+        </div>
       {/each}
     </div>
 
@@ -153,9 +166,11 @@
       </p>
     </div>
 
-    <div class="grid h-auto grid-cols-1 gap-4 md:h-200 md:grid-cols-4 md:grid-rows-3">
+    <div
+      class="grid h-auto grid-cols-1 gap-4 md:grid-cols-2 lg:h-200 lg:grid-cols-4 lg:grid-rows-3"
+    >
       <div
-        class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-2 md:row-span-2"
+        class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] lg:col-span-2 lg:row-span-2"
       >
         {#if galleryPreview[0]}
           <img
@@ -167,7 +182,7 @@
       </div>
 
       <div
-        class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-2 md:row-span-1"
+        class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] lg:col-span-2 lg:row-span-1"
       >
         {#if galleryPreview[1]}
           <img
@@ -179,7 +194,7 @@
       </div>
 
       <div
-        class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-2 md:row-span-1"
+        class="group relative overflow-hidden border-2 border-black bg-[#D9D9D9] lg:col-span-2 lg:row-span-1"
       >
         {#if galleryPreview[2]}
           <img
@@ -191,7 +206,7 @@
       </div>
 
       <div
-        class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
+        class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] lg:col-span-1 lg:row-span-1"
       >
         {#if galleryPreview[3]}
           <img
@@ -203,7 +218,7 @@
       </div>
 
       <div
-        class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
+        class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] lg:col-span-1 lg:row-span-1"
       >
         {#if galleryPreview[4]}
           <img
@@ -215,7 +230,7 @@
       </div>
 
       <div
-        class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
+        class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] lg:col-span-1 lg:row-span-1"
       >
         {#if galleryPreview[5]}
           <img
@@ -227,7 +242,7 @@
       </div>
 
       <div
-        class="group relative min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:col-span-1 md:row-span-1"
+        class="group relative block min-h-50 overflow-hidden border-2 border-black bg-[#D9D9D9] md:hidden lg:col-span-1 lg:row-span-1 lg:block"
       >
         {#if galleryPreview[6]}
           <img
